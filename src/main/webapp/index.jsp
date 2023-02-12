@@ -12,7 +12,7 @@ alert("You will be navigated to Add module");
 <script>  
 function viewProduct(){  
 alert("You will be navigated to view module");  
-}
+} 
 </script>
 </body>
 </html>
