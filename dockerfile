@@ -1,11 +1,13 @@
-# Use an existing image as the base
-FROM tomcat:9.0.34-jdk8-openjdk
+FROM tomcat:9.0.71-jdk11
 
-# Copy the war file to Tomcat webapps folder
-COPY target/ABCTechnologies-1.0.war /var/lib/tomcat9/webapps
+# Set the working directory to /var/lib/tomcat9
+WORKDIR /var/lib/tomcat9
 
-# Expose port 8080 for Tomcat
+# Copy the WAR file to the container's tomcat webapps directory
+COPY target/ABCTechnologies-1.0.war /var/lib/tomcat9/webapps/
+
+# Expose port 8081
 EXPOSE 8081
 
-# Start Tomcat server
+# Start the Tomcat server
 CMD ["catalina.sh", "run"]
