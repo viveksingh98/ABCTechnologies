@@ -11,6 +11,3 @@ EXPOSE 8082
 
 # Start the Tomcat server
 CMD ["catalina.sh", "run"]
-
-# Map the container's port 8082 to a port on the host machine
-CMD ["-p", "8082:8082"]
