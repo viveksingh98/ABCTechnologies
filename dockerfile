@@ -1,3 +1,5 @@
-From tomcat:9-alpine 
-#COPY /var/lib/jenkins/workspace/AbcTechnologiesPackage/target/ABCtechnologies-1.0.war /usr/local/tomcat/webapps
+From tomcat:9.0-alpine 
+ADD ./*.war /usr/local/tomcat/webapps
 EXPOSE 8080
+
+CMD ["catalina.sh", "run"]
