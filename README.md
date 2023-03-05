@@ -1,9 +1,9 @@
 ﻿# Table of Contents
 [Industry Grade Project 1: (ABC Technologies)	1](#_Toc128963020)
 
-[Prerequisites	1](#_Toc128963021)
+[Prerequisites](#_Toc128963021)
 
-[Repository URL	1](#_Toc128963022)
+[Repository URL](#_Toc128963022)
 
 [Task 1](#_Toc128963023)
 
