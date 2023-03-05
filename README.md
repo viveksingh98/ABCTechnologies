@@ -5,6 +5,8 @@
 
 **Github Repository**: <https://github.com/viveksingh98/ABCTechnologies.git> 
 
+**Document Link**: <https://github.com/viveksingh98/ABCTechnologies/blob/main/EdurekaDevOpsIndustryGradeProject_ABCTechnologies.docx>
+
 
 # Prerequisites
 1. Global tool configuration is done
