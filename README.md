@@ -1,5 +1,5 @@
 ﻿# Table of Contents
-[Industry Grade Project 1: (ABC Technologies)	1](#_Toc128963020)
+[Industry Grade Project 1: (ABC Technologies)](#_Toc128963020)
 
 [Prerequisites](#_Toc128963021)
 
