@@ -1,19 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp
+  name: abctech-deployment
+  labels:
+    app: abctech
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: myapp
+      app: abctech
   template:
     metadata:
       labels:
-        app: myapp
+        app: abctech
     spec:
       containers:
-      - name: myapp
+      - name: abctech
         image: viveksingh98/myrepo:latest
         imagePullPolicy: Always
         ports:
