@@ -1,22 +1,3 @@
-﻿# Table of Contents
-[Industry Grade Project 1: (ABC Technologies)	1](#_Toc128963020)
-
-[Prerequisites	1](#_Toc128963021)
-
-[Repository URL	1](#_Toc128963022)
-
-[Task 1	1](#_Toc128963023)
-
-[Task 2	1](#_Toc128963024)
-
-[Task 3	1](#_Toc128963025)
-
-[Task 4	1](#_Toc128963026)
-
-[Task 5	1](#_Toc128963027)
-
-
-
 # Industry Grade Project 1: (ABC Technologies)
 **Student Name**: Vivek Singh
 
@@ -27,15 +8,9 @@
 
 # Prerequisites
 1. Global tool configuration is done
-1. All the necessary Jenkins plugins are installed
-1. Master-Slave node configuration is in place
-1. All the necessary software like Git, Jenkins, Maven, Tomcat, Docker, Kubernetes, JDK, Ansible, Eclipse, Prometheus and Grafana are installed properly.
-
-**Screenshots:**
-
-
-
-
+2. All the necessary Jenkins plugins are installed
+3. Master-Slave node configuration is in place
+4. All the necessary software like Git, Jenkins, Maven, Tomcat, Docker, Kubernetes, JDK, Ansible, Eclipse, Prometheus and Grafana are installed properly.
 
 
 # Repository URL
@@ -50,16 +25,16 @@ Clone the project from the GitHub link shared in resources to your local machine
 **Solution:**
 
 1. Open a terminal or command prompt on the local machine.
-1. Navigate to the directory where I downloaded the project from edureka using the cd command.
-1. Check that you have Maven installed on the machine by running the command mvn -version. If Maven is not installed, I can download it from the official website: <https://maven.apache.org/download.cgi>
-1. Run the command mvn clean install. This will compile the code, run any tests, and create a target directory containing the built artifacts.
-1. If the build is successful, I will see a message indicating that the build was successful, and the location of the built artifacts. If there were any errors, I will see error messages in the terminal.
-1. Next, navigate to the directory of the cloned repository on the local machine using the cd command.
-1. Initialize a new Git repository using the command git init.
-1. Add the files to the Git repository using the command git add . to add all files in the directory to the repository. Alternatively, I can specify specific files to add.
-1. Commit the changes using the command git commit -m "Initial commit".
-1. Add the remote repository URL using the command git remote add origin https://github.com/viveksingh98/ABCTechnologies.
-1. Push the changes to the remote repository using the command git push -u origin master. This will push the changes to the master branch of the remote repository.
+2. Navigate to the directory where I downloaded the project from edureka using the cd command.
+3. Check that you have Maven installed on the machine by running the command mvn -version. If Maven is not installed, I can download it from the official website: <https://maven.apache.org/download.cgi>
+4. Run the command mvn clean install. This will compile the code, run any tests, and create a target directory containing the built artifacts.
+5. If the build is successful, I will see a message indicating that the build was successful, and the location of the built artifacts. If there were any errors, I will see error messages in the terminal.
+6. Next, navigate to the directory of the cloned repository on the local machine using the cd command.
+7. Initialize a new Git repository using the command git init.
+8. Add the files to the Git repository using the command git add . to add all files in the directory to the repository. Alternatively, I can specify specific files to add.
+9. Commit the changes using the command git commit -m "Initial commit".
+10. Add the remote repository URL using the command git remote add origin https://github.com/viveksingh98/ABCTechnologies.
+11. Push the changes to the remote repository using the command git push -u origin master. This will push the changes to the master branch of the remote repository.
 
 
 
@@ -83,8 +58,8 @@ Set up the Git repository and push the source code. Then, log in to Jenkins.
 
 • Third for packing the code
 
-1. ` `Execute the CI/CD pipeline to execute the jobs created in step 1 
-1. Set up a master-slave node to distribute the tasks in the pipeline.
+2. Execute the CI/CD pipeline to execute the jobs created in step 1 
+3. Set up a master-slave node to distribute the tasks in the pipeline.
 
 **Solution:**
 
@@ -93,10 +68,10 @@ Set up the Git repository and push the source code. Then, log in to Jenkins.
 - Clone the repository to your local machine using the git clone command.
 - Add the source code to the local repository and commit the changes using the git add and git commit commands.
 - Push the changes to the remote repository on GitHub using the git push command.
-1. Log in to Jenkins:
+2. Log in to Jenkins:
 - Open your web browser and navigate to the Jenkins URL.
 - Log in to Jenkins with your credentials.
-1. Create a build pipeline containing a job for each:
+3. Create a build pipeline containing a job for each:
 - Install the required plugins for building, testing and packaging the Java code. Some commonly used plugins are:
 - Maven Integration Plugin - for building and packaging the Java code using Maven.
 - JUnit Plugin - for running JUnit tests.
@@ -113,38 +88,14 @@ Set up the Git repository and push the source code. Then, log in to Jenkins.
 - In the General section of the job configuration, specify the same GitHub repository URL as the previous jobs.
 - In the Build section, add a new Invoke top-level Maven targets build step and specify the Maven goal to execute, such as package.
 - In the Post-build Actions section, add a new Archive the artifacts post-build action and specify the location of the built artifacts, such as target/\*.jar.
-1. Execute the CI/CD pipeline to execute the jobs created in step 1:
+4. Execute the CI/CD pipeline to execute the jobs created in step 1:
 - Create a new pipeline job in Jenkins.
 - In the pipeline configuration, add the three jobs created in step 3 as stages of the pipeline.
 - Configure the pipeline to trigger each stage when the previous stage is successful.
-1. Set up a master-slave node to distribute the tasks in the pipeline:
+5. Set up a master-slave node to distribute the tasks in the pipeline:
 - Install and configure the SSH Slaves plugin in Jenkins.
 - Set up a new slave node in Jenkins and configure it to connect to a remote server using SSH.
 - Configure the pipeline to distribute the jobs across the master and slave nodes, based on their capabilities and availability.
-
-Screenshots:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -193,21 +144,6 @@ sudo docker run -p 8081:8081 -d dockerfile
 1. I can access the running container by navigating to http://<docker-host>:8081/. (I have set port 8081 because on port 8080 Jenkins is running)
 1. I have now successfully integrated Docker with Jenkins and created a CI/CD pipeline to build and deploy a Docker container.
 
-**Screenshots:**
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Task 4
 
 **Task Description:**
@@ -236,12 +172,6 @@ Integrate the Docker host with Ansible. Write an Ansible playbook to create an i
 
 
 1. In the Jenkins job, I executed the Ansible playbook only after the "Package" job had been completed successfully.
-
-
-1. Output:
-
-
-
 
 
 
@@ -289,7 +219,6 @@ Using Prometheus, monitor the resources like CPU utilization: Total Usage, Usage
 
 1. Create Grafana dashboard.
 1. Add the source as Prometheus.
-1. Output:
 
 
 
