@@ -1,22 +1,3 @@
-﻿# Table of Contents
-[Industry Grade Project 1: (ABC Technologies)](#_Toc128963020)
-
-[Prerequisites](#_Toc128963021)
-
-[Repository URL](#_Toc128963022)
-
-[Task 1](#_Toc128963023)
-
-[Task 2](#_Toc128963024)
-
-[Task 3](#_Toc128963025)
-
-[Task 4](#_Toc128963026)
-
-[Task 5](#_Toc128963027)
-
-
-
 # Industry Grade Project 1: (ABC Technologies)
 **Student Name**: Vivek Singh
 
