@@ -1,0 +1,15 @@
+- name: Run kubectl commands
+  hosts: 172.31.5.53
+
+  tasks:
+  - name: Run kubectl get nodes
+    command: kubectl get nodes
+    register: nodes_output
+  - debug:
+      var: nodes_output.stdout_lines
+
+  - name: Run kubectl get services
+    command: kubectl get services
+    register: services_output
+  - debug:
+      var: services_output.stdout_lines
