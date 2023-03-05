@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: as178/edurekaproject:latest
+        image: viveksingh98/myrepo:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
