@@ -1,15 +1,23 @@
-- name: Run kubectl commands
-  hosts: 172.31.5.53
+---
+- hosts: master
+  #  become: true
+  user: edureka
 
   tasks:
-  - name: Run kubectl get nodes
-    command: kubectl get nodes
-    register: nodes_output
-  - debug:
-      var: nodes_output.stdout_lines
+    - name: check version
+      command: kubectl --kubeconfig /home/edureka/.kube/admin.conf version
 
-  - name: Run kubectl get services
-    command: kubectl get services
-    register: services_output
-  - debug:
-      var: services_output.stdout_lines
+    - name: create deployment
+      command: kubectl --kubeconfig /home/edureka/.kube/admin.conf apply -f deployment.yml
+
+      args:
+        chdir: /opt/k8s
+
+    - name: create service
+      command: kubectl --kubeconfig /home/edureka/.kube/admin.conf apply -f service.yml
+
+      args:
+        chdir: /opt/k8s
+
+    - name: update deployment if pods updated in container repository
+      command: kubectl --kubeconfig /home/edureka/.kube/admin.conf rollout restart deployment.apps/abc-deploy
