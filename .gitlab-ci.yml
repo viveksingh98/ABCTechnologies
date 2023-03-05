@@ -1,0 +1,51 @@
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH != "main"
+      when: never
+    - when: always
+
+stages:
+  - "test"
+  - "build"
+  - "deploy"
+
+run_test:
+  stage: "test"
+  image: maven
+  tags:
+    - docker
+  before_script:
+    - echo "Starting Testing of Codee..."
+  script: 
+    - mvn test
+
+build_maven_image:
+  stage: "build"
+  tags:
+    - shell
+  before_script:
+    - echo "Build Maven Image is Starting.."
+    - export IMAGE_NAME=$CI_REGISTRY_IMAGE/abctechnologies 
+  script: 
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY 
+    - docker build -t $IMAGE_NAME:$CI_PIPELINE_IID . 
+    - docker run -dt --name maven_$CI_PIPELINE_IID $IMAGE_NAME:$CI_PIPELINE_IID
+    - docker cp maven_$CI_PIPELINE_IID:/project/target/ABCtechnologies-1.0.war .
+    - docker push $IMAGE_NAME:$CI_PIPELINE_IID
+  artifacts:
+    name: ABCtechnologies_1.0.$CI_PIPELINE_IID
+    paths:
+      - "./ABCtechnologies-1.0.war"
+
+deploy_project:
+  stage: "deploy"
+
+  tags:
+    - shell 
+  before_script:
+    - ls
+    - export IMAGE_NAME=$CI_REGISTRY_IMAGE/abctechnologies 
+  script: 
+    - kubectl get nodes -o wide
+    - kubectl set image deployment/myapp myapp=$IMAGE_NAME:$CI_PIPELINE_IID
+    - kubectl apply -f k8s/
