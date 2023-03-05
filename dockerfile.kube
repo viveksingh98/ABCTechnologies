@@ -1,13 +1,23 @@
-FROM alpine:latest
+---
+- hosts: master
+  #  become: true
+  user: edureka
 
-RUN apk --no-cache add curl
+  tasks:
+    - name: check version
+      command: kubectl --kubeconfig /home/edureka/.kube/admin.conf version
 
-# Install and configure kubectl
-RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-RUN mkdir -p ~/.local/bin/kubectl
-RUN mv ./kubectl ~/.local/bin/kubectl
-COPY .kube /root/.kube
-COPY .minikube /root/.minikube
-RUN chmod +r ~/.kube/config
-RUN chmod +x ~/.local/bin/kubectl/ -R
-WORKDIR /root/.local/bin/kubectl/
+    - name: create deployment
+      command: kubectl --kubeconfig /home/edureka/.kube/admin.conf apply -f deployment.yml
+
+      args:
+        chdir: /opt/k8s
+
+    - name: create service
+      command: kubectl --kubeconfig /home/edureka/.kube/admin.conf apply -f service.yml
+
+      args:
+        chdir: /opt/k8s
+
+    - name: update deployment if pods updated in container repository
+      command: kubectl --kubeconfig /home/edureka/.kube/admin.conf rollout restart deployment.apps/abc-deploy
