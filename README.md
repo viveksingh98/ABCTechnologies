@@ -1,7 +1,7 @@
 # Industry Grade Project 1: (ABC Technologies)
 **Student Name**: Vivek Singh
 
-**E-Mail**: viveksingh98@gmail.com
+**E-Mail**: vivek_singh@yahoo.com
 
 **Github Repository**: <https://github.com/viveksingh98/ABCTechnologies.git> 
 
